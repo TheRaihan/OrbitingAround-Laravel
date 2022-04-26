@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\HoldingsController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/h',function() {
-    return view('holdings');
-});
+Route::get('/h',[HoldingsController::class, 'index']);
